@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Energy Management System
 
-## Getting Started
+Interactive results site for the IoT + ML smart energy project (solar PV, 1.2 kWh battery, utility grid, LSTM forecasting).
 
-First, run the development server:
+Built with Next.js 15 (static export), React 19, Tailwind CSS 4, Motion and Recharts.
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build      # static site in ./out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy on Render
 
-## Learn More
+1. Push this folder to a GitHub repository.
+2. On Render: New > Blueprint, pick the repository. `render.yaml` creates a free static site.
+   (Or New > Static Site with build command `npm ci && npm run build` and publish directory `out`.)
 
-To learn more about Next.js, take a look at the following resources:
+## Data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/data/hourly.json`: 744 hourly readings (simulated month), with energy-flow columns derived from `smart_meter_clean.csv`.
+- `src/data/lstm.json`: test-set predictions from the three LSTM models trained in the Colab notebook.
+- `public/data/smart_meter_clean.csv`: the dataset, downloadable from the site footer.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Names on the page: edit `TEAM` and `GUIDE` at the top of `src/components/Dashboard.tsx`.
