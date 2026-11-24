@@ -12,12 +12,10 @@ import { Cases, Results } from "./ResultsCases";
 import Simulator from "./Simulator";
 import { Section } from "./ui";
 
-/* ---------------------------------------------------------------------------
-   Edit these lines to put your names on the page.
---------------------------------------------------------------------------- */
+
 const INSTITUTION = "Thapar Institute of Engineering and Technology, Patiala";
-const TEAM = ""; // for example: "Nikunj Garg, Name Two"
-const GUIDE = ""; // for example: "Dr. Name"
+const TEAM = "Aryan Bharadwaj,Tarun Garg,Moksh,Nikunj Garg,Kusham Lata"; 
+const GUIDE = "Dr. HemDutt Joshi"; 
 
 function firstMiddayHour() {
   for (let i = 0; i < N; i++) if (H.case[i] === 1 && H.chPv[i] > 0.2) return i;
