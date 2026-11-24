@@ -1,6 +1,6 @@
 # Smart Energy Management System
 
-Interactive results site for the IoT + ML smart energy project (solar PV, 1.2 kWh battery, utility grid, LSTM forecasting).
+Interactive results site for the ML smart energy project (solar PV, 1.2 kWh battery, utility grid, LSTM forecasting).
 
 Built with Next.js 15 (static export), React 19, Tailwind CSS 4, Motion and Recharts.
 
@@ -29,4 +29,4 @@ npm run build      # static site in ./out
 - `src/data/lstm.json`: test-set predictions from the three LSTM models trained in the Colab notebook.
 - `public/data/smart_meter_clean.csv`: the dataset, downloadable from the site footer.
 
-Names on the page: edit `TEAM` and `GUIDE` at the top of `src/components/Dashboard.tsx`.
+
