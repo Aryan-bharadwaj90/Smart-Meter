@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { MotionConfig, motion, useReducedMotion } from "motion/react";
 import { useCallback, useMemo, useState } from "react";
 import { H, LSTM, N, TARIFF, inr, metrics, num } from "@/lib/data";
 import Battery from "./Battery";
@@ -35,7 +35,7 @@ export default function Dashboard() {
   }, [reduce]);
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Nav />
       <main>
         <div id="hero" className="relative overflow-hidden bg-night text-white">
@@ -46,15 +46,12 @@ export default function Dashboard() {
           />
           <div className="relative mx-auto max-w-[1200px] px-4 pb-16 pt-28 sm:px-8 sm:pt-32">
             <motion.div
-              initial={{ opacity: 0, y: reduce ? 0 : 18 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-[820px]"
             >
-              <p className="text-[0.95rem] text-white/60">
-                IoT and machine learning project, {INSTITUTION}
-              </p>
-              <h1 className="mt-4 font-display text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[4.2rem]">
+              <h1 className="font-display text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[4.2rem]">
                 Smart Energy Management System
               </h1>
               <p className="mt-5 max-w-[60ch] text-[1.1rem] leading-relaxed text-white/75">
@@ -71,7 +68,7 @@ export default function Dashboard() {
             <motion.div
               id="simulator"
               className="mt-12 scroll-mt-20"
-              initial={{ opacity: 0, y: reduce ? 0 : 30 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
@@ -94,7 +91,7 @@ export default function Dashboard() {
         <Conclusion />
       </main>
       <Footer />
-    </>
+    </MotionConfig>
   );
 }
 
